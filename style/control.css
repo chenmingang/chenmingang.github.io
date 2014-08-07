@@ -1,0 +1,57 @@
+#index {
+    font-family: 'Times New Roman';
+    background-image: url('../image/bak.jpg');
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#main {
+    margin:0 auto;
+    width:80%;
+}
+#motto {
+    font-size:500%;
+    font-weight: bold;
+    text-align: center;
+    color: #cc9933;
+    margin:0 auto;
+    margin-top:100px;
+    display:block;
+}
+span + span {
+    font-size: 150%;
+    margin-top: 3%;
+    margin-right: 20%;
+    float: right;
+    display: inline-block;
+}
+#content {
+    width: 20%;
+    margin: 10% auto 0;
+    clear: both;
+}
+#content li{
+    font-size: 150%;
+    text-align: center;
+    margin: 10px;
+}
+.body{
+    background-color:#FFFFee;
+}
+#blog-content{
+    width: 35%;
+    margin: 0 auto;
+}
+#think-content{
+    width: 35%;
+    margin: 0 auto;
+}
+#zheteng-content{
+    width: 35%;
+    margin: 0 auto;
+}
+.think-item{
+    width: 50%;
+    margin: 0 auto;
+}

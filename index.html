@@ -1,38 +1,28 @@
 <html>
 <head>
-	<style>
-		body{
-			background-image: url('image/bak.jpg');
-			background-position:center;
-			background-repeat: no-repeat;
-          		background-attachment: fixed;
-         		background-size: cover;
-		}
-		#main{
-			margin:0 auto;
-			width:999px;
-		}
-		#motto{
-			font-size:5em;
-			font-weight: bold;
-			text-align: center;
-			color: #cc9933;
-			margin:0 auto;
-			margin-top:100px;
-			display:block;
-		}
-	</style>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+	<link rel="stylesheet" type="text/css" href="style/control.css">
 </head>
-<body>
+<body id="index">
 	<div id="main">
-		<span id="motto">Nothing is impossible!</span>
+		<div>
+			<span id="motto">Nothing is impossible!</span>
+			<span>But if you do nothing,you'll get nothing.</span>
+		</div>
+		<div id="content">
+			<ul>
+				<li>
+					<a href="view/blog/list.html">大博客</a>
+				</li>
+				<li>
+					<a href="view/idea/list.html">小想法</a>
+				</li>
+				<li>
+					<a href="view/zheteng/list.html">爱折腾</a>
+				</li>
+			</ul>
+		</div>
 	</div>
-	<span>but if you do nothing,you'll get nothing.</span>
-	<span>想把这个东西用起来,做个博客挺好的,下次提交要做出个基本样子</span>
-	<!-- <span>信奉 “工匠精神” ！</span>
-	<div>
-		<a href="idea.html">some ideas...</a>
-	</div> -->
-
 </body>
 </html>
