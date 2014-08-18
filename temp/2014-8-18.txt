@@ -1,0 +1,31 @@
+<div id="preview-column" class="pull-right" style="float: right; width: 720px; color: rgb(44, 62, 80); font-family: &#39;Microsoft Yahei&#39;, &#39;Hiragino Sans GB&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif; font-size: 14px; line-height: 20px; white-space: normal; background-color: rgb(249, 249, 245);">
+    <div id="wmd-panel-preview" class="wmd-panel-preview preview-container" style="padding-left: 20px; padding-right: 20px; overflow: auto; height: 716px;">
+        <div id="wmd-preview" class="wmd-preview" style="width: 671px; font-size: 16px; line-height: 27px; overflow: auto; border-width: 0px 1px 1px; border-style: dashed; border-color: rgb(187, 187, 187); padding-left: 5px; padding-right: 5px; height: auto;">
+            <h1 id="goagent配置2014-8-18配置" style="margin: 50px 0px 20px; font-family: &#39;Helvetica Neue&#39;, &#39;Microsoft Yahei&#39;, &#39;Hiragino Sans GB&#39;, &#39;WenQuanYi Micro Hei&#39;, sans-serif; font-weight: 500; line-height: 40px; color: inherit; text-rendering: optimizelegibility; font-size: 30px;">
+                GoAgent配置
+            </h1>
+            <p style="margin-top: 0px; margin-bottom: 20px;">
+                <code style="padding: 2px 4px; font-family: Monaco, Menlo, Consolas, &#39;Courier New&#39;, monospace; font-size: 14px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; white-space: nowrap; background-color: rgb(214, 219, 223); border: 0px;">翻墙</code>&nbsp;<code style="padding: 2px 4px; font-family: Monaco, Menlo, Consolas, &#39;Courier New&#39;, monospace; font-size: 14px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; white-space: nowrap; background-color: rgb(214, 219, 223); border: 0px;">goagent</code>
+            </p>
+            <hr style="margin: 30px 0px; border-top-width: 0px; border-right-width: 0px; border-left-width: 0px; border-bottom-style: dashed; border-bottom-color: rgb(207, 207, 207);"/>
+            <p style="margin-top: 0px; margin-bottom: 20px;">
+                goagent一直是大家非常喜爱的翻墙工具,网上的配置方法很多,比如说<a href="https://code.google.com/p/goagent/wiki/InstallGuide" target="_blank" style="color: rgb(0, 136, 204); text-decoration: none;">这个</a>,图文并茂,但我配置的过程中还是遇到了一些问题,现把这些问题记录一下供大家参考
+            </p>
+            <ul style="padding: 0px; margin: 0px 0px 10px 25px;">
+                <li>
+                    goagent下载地址<a href="https://github.com/goagent/goagent" target="_blank" style="color: rgb(0, 136, 204); text-decoration: none;">https://github.com/goagent/goagent</a>
+                </li>
+                <li>
+                    <p style="margin-top: 0px; margin-bottom: 10px;">
+                        在上传application的时候也就是执行 python uploader.zip 命令的时候出现一个错误:&nbsp;<br/>Goagent Attribute Error: can’t set attribute&nbsp;<br/>网上的解决办法全是让取消 &quot;两步验证&quot;,但是经过我的测试发现仅有这一步还不够,还需要打开 &quot;不够安全的应用的访问权限&quot;最终设置如图<img src="http://d.pcs.baidu.com/thumbnail/d89b671fb495c17e6f5b86046f91c250?fid=3140481134-250528-967401520510805&time=1408338000&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-c2m3gpN2GFOFk/xgSHDuCPvPmuI=&rt=sh&expires=2h&r=332763986&sharesign=unknown&size=c710_u500&quality=100" alt="此处输入图片的描述" title="" style="height: auto; max-width: 100%; vertical-align: middle; border: 0px;"/>
+                    </p>
+                </li>
+                <li>
+                    <p style="margin-top: 0px; margin-bottom: 10px;">
+                        在上传完成并修改了 local\proxy.ini 文件之后,即可运行&nbsp;<br/>sudo ./goagent-gtk.py 弹出客户端 这时发现了里面有一个warning要求安装gevent,虽然只是一个warning,但是没有这个东西goagent无法正常工作,所以在一阵折腾之后找到了<a href="http://pan.baidu.com/s/1sjQ8gWH" target="_blank" style="color: rgb(0, 136, 204); text-decoration: none;">http://pan.baidu.com/s/1sjQ8gWH</a>这两个可用的python包,把它们分别解压并在文件夹中运行 &nbsp;sudo python setup.py install &nbsp;安装好之后goagent就可以用了
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
