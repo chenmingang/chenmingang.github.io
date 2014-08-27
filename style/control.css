@@ -66,6 +66,7 @@ span + span {
     margin: 38px auto 100px;
 }
 #uyan_frame{
-    border-top: 1px solid #CACACA;
-    border: 1px solid #FFFFee;
+    margin-top: 50px;
+    padding-top: 43px;
+    border-top: 2px solid #cacaca;
 }
