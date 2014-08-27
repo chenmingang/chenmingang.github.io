@@ -58,8 +58,14 @@ span + span {
 .blog-item{
     width: 50%;
     margin: 38px auto 100px;
+    border: 1px solid #CACACA;
+    padding: 15px;
 }
 .zheteng-item{
     width: 50%;
     margin: 38px auto 100px;
+}
+#uyan_frame{
+    border-top: 1px solid #CACACA;
+    border: 1px solid #FFFFee;
 }
