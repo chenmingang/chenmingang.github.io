@@ -3,12 +3,20 @@
 <script src="http://naotu.baidu.com/lib/jquery-2.1.0.min.js?_=1406600902145">
 </script>
 <script type="text/javascript">
-    console.log(document.getElementById('iframe').contentWindow.content);
+    //console.log($(document.getElementById('iframe').contentWindow.document).find('#minder_node_6'););
+	//$(window.frames["iframe"].document).find("#minder_node_6");
+	//$(window.frames["iframe"].document).find("#node_outline_4").attr('fill','#fff');
+	//window.parent.document
+	$(window.frames["iframe"].document)
+        .find("#minder_1")
+        .children().click(function(){
+            $(this).find('path')[1].attr('id')
+        });
 </script>
 
 
 
-<iframe src="http://chenmingang.github.io/image/1.svg" width="300" height="100" id="iframe" name="iframe">
+<iframe src="http://chenmingang.github.io/image/1.svg"id="iframe" name="iframe">
 </iframe>
 </body>
 </html>
