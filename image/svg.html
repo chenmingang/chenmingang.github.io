@@ -20,10 +20,10 @@
 $(window.frames["iframe"].document)
     .find("#minder_1").children()
     .click(function(){
-        i=$(this).find('path')[1];
+        i=$(this).children('path')[1];
         $(i).attr('fill','red');
         console.log(i);
-        $($(this).find('path')[1]).html($(this).find('path')[1]);
+        $($(this).children('path')[1]).html($(this).children('path')[1]);
 });
 </script>
 </body>
