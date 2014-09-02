@@ -17,7 +17,13 @@
  //        i=$(this).find('path')[1];
  //        console.log(i.attr('id'));
  //    });
-$(window.frames["iframe"].document).find("#minder_1").children().click(function(){i=$(this).find('path')[1];console.log(i)});
+$(window.frames["iframe"].document)
+    .find("#minder_1").children()
+    .click(function(){
+        i=$(this).find('path')[1];
+        id=i.attr('id');
+        console.log(id);
+});
 </script>
 </body>
 </html>
