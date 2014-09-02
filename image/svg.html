@@ -8,10 +8,11 @@
 	//$(window.frames["iframe"].document).find("#node_outline_4").attr('fill','#fff');
 	//window.parent.document
 	$(window.frames["iframe"].document)
-        .find("#minder_1")
-        .children().click(function(){
-            $(this).find('path')[1].attr('id')
-        });
+        .find("#minder_1").children()
+        .click(function(){
+        i=$(this).find('path')[1];
+        console.log(i.attr('id'));
+    });
 </script>
 
 
