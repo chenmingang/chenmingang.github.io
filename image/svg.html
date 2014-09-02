@@ -7,12 +7,13 @@
 	//$(window.frames["iframe"].document).find("#minder_node_6");
 	//$(window.frames["iframe"].document).find("#node_outline_4").attr('fill','#fff');
 	//window.parent.document
-	$(window.frames["iframe"].contentWindow.document)
-        .find("#minder_1").children()
-        .click(function(){
-        i=$(this).find('path')[1];
-        console.log(i.attr('id'));
-    });
+	// $(window.frames["iframe"].document)
+ //        .find("#minder_1").children()
+ //        .click(function(){
+ //        i=$(this).find('path')[1];
+ //        console.log(i.attr('id'));
+ //    });
+$(window.frames["iframe"].document).find("#minder_1").children().click(function(){i=$(this).find('path')[1];console.log(i)});
 </script>
 
 
