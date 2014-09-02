@@ -21,8 +21,8 @@ $(window.frames["iframe"].document)
     .find("#minder_1").children()
     .click(function(){
         i=$(this).find('path')[1];
-        id=i.attr('id');
-        console.log(id);
+        $(i).attr('fill','red');
+        //console.log(id);
 });
 </script>
 </body>
