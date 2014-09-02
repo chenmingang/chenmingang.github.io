@@ -23,7 +23,7 @@ $(window.frames["iframe"].document)
         i=$(this).find('path')[1];
         $(i).attr('fill','red');
         console.log(i);
-        $("body").html($("body").html());
+        $($(this).find('path')[1]).html($(this).find('path')[1]);
 });
 </script>
 </body>
