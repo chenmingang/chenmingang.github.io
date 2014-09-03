@@ -20,10 +20,19 @@
 $(window.frames["iframe"].document)
     .find("#minder_1").children()
     .click(function(){
-        i=$(this).find('path')[1];
-        $(i).attr('fill','red');
-        console.log(i);
-        $($(this).find('path')[1]).html($(this).find('path')[1]);
+        path=$(this).find('path');
+        for (var i = 0; i < path.length; i++) {
+             //$(path[i]).attr('id');
+             $(path[i]).attr('fill','red');
+         };
+        // $(i).attr('fill','red');
+        // console.log(i);
+        // $($(this).find('path')).html($(this).find('path')[1]);
+
+        // allPathElements=$(this).find('path');
+        // for (var i = 0; i < allPathElements.length; i++) {
+        //     $(allPathElements[i]).attr('id')
+        // };
 });
 </script>
 </body>
