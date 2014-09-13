@@ -11,28 +11,15 @@
     //$(window.frames["iframe"].document).find("#minder_node_6");
     //$(window.frames["iframe"].document).find("#node_outline_4").attr('fill','#fff');
     //window.parent.document
-    // $(window.frames["iframe"].document)
- //        .find("#minder_1").children()
- //        .click(function(){
- //        i=$(this).find('path')[1];
- //        console.log(i.attr('id'));
- //    });
+    //不能读取不同域名内的iframe元素,本地静态文件同样不可以
+
 $(window.frames["iframe"].document)
     .find("#minder_1").children()
     .click(function(){
         path=$(this).find('path');
         for (var i = 0; i < path.length; i++) {
-             //$(path[i]).attr('id');
              $(path[i]).attr('fill','red');
          };
-        // $(i).attr('fill','red');
-        // console.log(i);
-        // $($(this).find('path')).html($(this).find('path')[1]);
-
-        // allPathElements=$(this).find('path');
-        // for (var i = 0; i < allPathElements.length; i++) {
-        //     $(allPathElements[i]).attr('id')
-        // };
 });
 </script>
 </body>
