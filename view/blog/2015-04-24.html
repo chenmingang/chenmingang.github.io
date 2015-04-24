@@ -12,14 +12,19 @@
 
 <hr>
 
-<p>create database test; <br>
+<p>
+
+create database test; <br>
+#################################
 drop table if exists article; <br>
 CREATE TABLE article ( <br>
   id int(11) not null auto_increment, <br>
   content text comment ‘文章正文’, <br>
   member_id int(11), <br>
   PRIMARY KEY (id) <br>
-); <br>
+);
+<br> 
+######################################
 drop table if exists member; <br>
 CREATE TABLE member ( <br>
   id int(11) NOT NULL AUTO_INCREMENT, <br>
@@ -27,26 +32,27 @@ CREATE TABLE member ( <br>
   username varchar(255) DEFAULT NULL, <br>
   PRIMARY KEY (id) <br>
 ); <br>
+###########################################
 drop table if exists article2; <br>
 create table article2 select * from article; <br>
 truncate table article2; <br>
 insert into article2 select * from article;</p>
-
+###############################################
 <p>select  <br>
 a.id,a.content,a.member_id,m.username <br>
 from article  <br>
 left join member on a.member_id=m.id;</p>
-
+#######################################
 <p>select  <br>
 a.id,a.content,a.member_id,m.username <br>
 from (select * from article where id&gt;10) a <br>
 left join member m on a.member_id=m.id;</p>
-
+########################################
 <p>select  <br>
 a.id,a.content,a.member_id,m.username <br>
 from article a <br>
 left join (select id,username from member where id&gt;10 limit 100) m on a.member_id=m.id;</p>
-
+################################################
 <p>select count(1) amount,gender from member group by gender;</p></div>        <!-- UY BEGIN -->
         <div id="uyan_frame" style="margin-top: 50px;"></div>
         <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1957046"></script>
