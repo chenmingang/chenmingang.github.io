@@ -9,3 +9,5 @@
 [图解Javascript上下文与作用域](http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/)
 
 [spring,mybatis事务管理配置](http://openwares.net/java/spring_mybatis_transaction.html)
+
+[MyBatis Generator](http://mybatis.github.io/generator/index.html)
