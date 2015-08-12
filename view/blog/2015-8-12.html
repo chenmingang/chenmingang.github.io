@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../style/control.css">
+    <link rel="stylesheet" href="http://maxiang.qiniudn.com/app/css/app.css?1408270014">
+    <title>博客</title>
+</head>
+<body class="body">
+    <div class="blog-item"><div id="" class="note-content" style="padding-left: 35px; padding-right: 35px; padding-bottom: 174px;">
+                        <div id="wmd-preview" class="preview-content"></div>
+                    <div id="wmd-preview-section-52" class="wmd-preview-section preview-content">
+
+</div><div id="wmd-preview-section-1414" class="wmd-preview-section preview-content">
+
+<h2 id="项目配置参数">项目配置参数</h2>
+
+<p>还是记录下一些东西比较好啊</p></div><div id="wmd-preview-section-1325" class="wmd-preview-section preview-content">
+
+<h3 id="mvn配置文件">mvn配置文件</h3>
+
+<p>比如我有三个环境的配置文件：dev.properties,test.properties,pro.properties <br>
+分别为开发环境，测试环境，线上环境的配置。在properties文件夹下。 <br>
+maven提供了这种不同环境配置不同参数的功能 <br>
+只需要在pom.xml中加上这种配置：</p></div><div id="wmd-preview-section-1332" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-html hljs xml"><div><div><div><div><div><div><div><div><div><div><div><div><div><span class="hljs-tag">&lt;<span class="hljs-title">profiles</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;<span class="hljs-title">profile</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>dev<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">activation</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;<span class="hljs-title">activeByDefault</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">activeByDefault</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;/<span class="hljs-title">activation</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;<span class="hljs-title">filters</span>&gt;</span></div><div>                    <span class="hljs-tag">&lt;<span class="hljs-title">filter</span>&gt;</span></div><div>                        src/main/properties/dev.properties</div><div>                    <span class="hljs-tag">&lt;/<span class="hljs-title">filter</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;/<span class="hljs-title">filters</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;/<span class="hljs-title">profile</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;<span class="hljs-title">profile</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;<span class="hljs-title">filters</span>&gt;</span></div><div>                    <span class="hljs-tag">&lt;<span class="hljs-title">filter</span>&gt;</span></div><div>                        src/main/properties/test.properties</div><div>                    <span class="hljs-tag">&lt;/<span class="hljs-title">filter</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;/<span class="hljs-title">filters</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;/<span class="hljs-title">profile</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;<span class="hljs-title">profile</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">id</span>&gt;</span>pro<span class="hljs-tag">&lt;/<span class="hljs-title">id</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;<span class="hljs-title">filters</span>&gt;</span></div><div>                    <span class="hljs-tag">&lt;<span class="hljs-title">filter</span>&gt;</span></div><div>                        src/main/properties/pro.properties</div><div>                    <span class="hljs-tag">&lt;/<span class="hljs-title">filter</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;/<span class="hljs-title">filters</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;/<span class="hljs-title">profile</span>&gt;</span></div><div>    <span class="hljs-tag">&lt;/<span class="hljs-title">profiles</span>&gt;</span></div></div></div></div></div></div></div></div></div></div></div></div></div></code></pre>
+
+<p>默认配置为activeByDefault 为true的 <br>
+然后在打包的时候执行  mvn clean package -P test 就可以应用test的配置了</p>
+
+</div><div id="wmd-preview-section-1396" class="wmd-preview-section preview-content">
+
+<h3 id="spring注入配置">spring注入配置</h3>
+
+<p>但是有些时候我希望直接在java程序中直接引用这些参数怎么办？ <br>
+maven还提供了不同环境读取不同文件夹下的配置文件的功能，然后通过java程序解析出这些参数，不过这样太麻烦了一些。 <br>
+spring提供了直接注入写在配置文件中的配置的功能 <br>
+首先需要在以上那些配置文件中写上不同的配置 <br>
+比如： <br>
+<code>imageHost=http://10.7.2.154</code> -&gt;dev.properties <br>
+<code>imageHost=http://www.lagou.com</code> -&gt;test.properties <br>
+<code>imageHost=http://www.lagou.com</code> -&gt;pro.properties <br>
+然后在resource文件夹下写一个app.properties <br>
+<code>imageHost=${imageHost}</code> <br>
+然后在spring的配置文件中加上</p></div><div id="wmd-preview-section-1303" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-html hljs xml"><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><span class="hljs-tag">&lt;<span class="hljs-title">bean</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"configProperties"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"org.springframework.beans.factory.config.PropertiesFactoryBean"</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;<span class="hljs-title">property</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"locations"</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;<span class="hljs-title">list</span>&gt;</span></div><div>                <span class="hljs-tag">&lt;<span class="hljs-title">value</span>&gt;</span>classpath:app.properties<span class="hljs-tag">&lt;/<span class="hljs-title">value</span>&gt;</span></div><div>            <span class="hljs-tag">&lt;/<span class="hljs-title">list</span>&gt;</span></div><div>        <span class="hljs-tag">&lt;/<span class="hljs-title">property</span>&gt;</span></div><div>    <span class="hljs-tag">&lt;/<span class="hljs-title">bean</span>&gt;</span></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></code></pre>
+
+<p>现在就可以在java中直接注入了</p></div><div id="wmd-preview-section-1229" class="wmd-preview-section preview-content">
+
+<pre class="prettyprint hljs-dark"><code class="language-java hljs"><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><div><span class="hljs-annotation">@Value</span>(<span class="hljs-string">"#{configProperties['imageHost']}"</span>)</div><div><span class="hljs-keyword">private</span> String imageHost;</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></code></pre></div><div id="wmd-preview-section-footnotes" class="preview-content"></div></div>        <!-- UY BEGIN -->
+        <div id="uyan_frame" style="margin-top: 50px;"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1957046"></script>
+        <!-- UY END -->
+    </div>
+</body>
+</html>
