@@ -13,3 +13,7 @@
 [MyBatis Generator](http://mybatis.github.io/generator/index.html)
 
 [Redis Commands](http://redis.io/commands/)
+
+[JQuery](http://www.php100.com/manual/jquery/)
+
+[CSS](http://css.doyoe.com/)
