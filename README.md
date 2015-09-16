@@ -6,6 +6,8 @@
 ===
 [AngularJS常用插件与指令收集](http://chensd.com/2015-06/AngularJS-popular-Plugins-and-Directive.html)
 
+[AngularJS分页](https://github.com/miaoyaoyao/AngularJs-UI)
+
 [图解Javascript上下文与作用域](http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/)
 
 [spring,mybatis事务管理配置](http://openwares.net/java/spring_mybatis_transaction.html)
