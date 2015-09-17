@@ -8,6 +8,8 @@
 
 [AngularJS分页](https://github.com/miaoyaoyao/AngularJs-UI)
 
+[娇小的（可配置）富文本编辑器](http://www.tinymce.com/tryit/3_x/full.php)
+
 [图解Javascript上下文与作用域](http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/)
 
 [spring,mybatis事务管理配置](http://openwares.net/java/spring_mybatis_transaction.html)
