@@ -14,6 +14,8 @@
 
 [spring,mybatis事务管理配置](http://openwares.net/java/spring_mybatis_transaction.html)
 
+[spring schema 配置](http://www.cnblogs.com/jifeng/archive/2011/09/14/2176599.html)
+
 [MyBatis Generator](http://mybatis.github.io/generator/index.html)
 
 [Redis Commands](http://redis.io/commands/)
