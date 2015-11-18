@@ -29,3 +29,7 @@
 [Zookeeper介绍](http://www.cnblogs.com/yuyijq/p/3391945.html)
 
 [Socket.IO](http://socket.io/docs/)
+
+[Jstat](http://www.cnblogs.com/mazj611/p/3481610.html)
+[Jmap,Jhat](http://www.cnblogs.com/ggjucheng/archive/2013/04/16/3024986.html)
+[Memory Analyzer](https://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-ma/)
