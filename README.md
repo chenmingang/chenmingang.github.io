@@ -37,3 +37,5 @@
 - [Jmap,Jhat](http://www.cnblogs.com/ggjucheng/archive/2013/04/16/3024986.html)
 
 - [Memory Analyzer](https://www.ibm.com/developerworks/cn/opensource/os-cn-ecl-ma/)
+
+- [Dubbo源码分析](http://my.oschina.net/pingpangkuangmo/blog/508963)
