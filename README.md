@@ -45,3 +45,4 @@
 - [grep -r '消息消费者' /*](http://www.cnblogs.com/end/archive/2012/02/21/2360965.html)
 
 - [Electic Search](http://es.xiaoleilu.com/) https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html　
+- [数据库原理简介](http://blog.jobbole.com/100349/#comment-156793)
