@@ -48,4 +48,4 @@
 
 - [Electic Search](http://es.xiaoleilu.com/) https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html　
 - [数据库原理简介](http://blog.jobbole.com/100349/#comment-156793)
-- [数据库事物隔离级别](http://www.hollischuang.com/archives/943)
+- [数据库事物隔离级别](http://www.hollischuang.com/archives/943)　[2](http://www.cnblogs.com/zhoujinyi/p/3437475.html)
