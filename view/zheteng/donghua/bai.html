@@ -1,0 +1,159 @@
+<html>
+<head>
+    <script src="fabric.js"></script>
+</head>
+<body>
+<canvas id="c" width="800" height="800"></canvas>
+
+<script>
+    var g = 9.8;
+    var canvas = this.__canvas = new fabric.Canvas('c');
+    canvas.selection = false; // disable group selection
+
+    fabric.Object.prototype.addGravity = function (bottom) {
+//        console.log(this);
+        this.setCoords();
+        if (this.mousedown!=undefined&&this.mousedown == 1) {
+            this.speed = 0;
+            return;
+        }
+
+        var that = this;
+        if (that.speed == undefined) {
+            that.speed = 0;
+        }
+        if (that.top > bottom) {
+            that.speed = 0;
+            return;
+        }
+        var penghzuang = 0;
+        canvas.forEachObject(function (obj) {
+            if (obj === that) return;
+            var intersection = that.intersectsWithObject2(obj);
+            if (intersection.int) {
+                that.speed = 0;
+                console.log('碰撞');
+                penghzuang = 1;
+                var points = intersection.points;
+                var firstPoint = null;
+                if(points.length>1){
+                    firstPoint = points[0];
+                }
+                console.log(firstPoint);
+            }
+        });
+        if (penghzuang) {
+            that.speed = 0;
+            return;
+        }
+
+        that.speed = that.speed + g * 1;
+        that.top = that.top + that.speed * 1;
+
+    };
+
+    (function () {
+
+
+        fabric.Object.prototype.transparentCorners = false;
+
+        var rect1 = new fabric.Rect({
+            width: 200,
+            height: 100,
+            left: 100,
+            top: 50,
+            angle: 30,
+            rx: 10,
+            ry: 10,
+            hasControls: true,
+            hasBorders: false,
+            fill: 'rgba(255,0,0,0.5)'
+        });
+//        rect1.addGravity();
+//        rect1.on({
+//            'moving': function () {
+//                var that = this;
+//                console.log("after:render");
+//                that.height += 10;
+//            }
+//        });
+//        rect1.set('selectable', false);
+        var rect2 = new fabric.Rect({
+            width: 100,
+            height: 100,
+            left: 350,
+            top: 250,
+            angle: -10,
+            rx: 10,
+            ry: 10,
+            hasControls: false,
+            hasBorders: false,
+            fill: 'rgba(0,200,0,0.5)'
+        });
+
+        var rect3 = new fabric.Rect({
+            width: 50,
+            height: 100,
+            left: 275,
+            top: 350,
+            angle: 45,
+            rx: 10,
+            ry: 10,
+            hasControls: false,
+            hasBorders: false,
+            stroke: '#eee',
+            strokeWidth: 5,
+            fill: 'rgba(0,0,200,0.5)'
+        });
+//        rect2.set('hasControls', false); // 只是禁止这个矩形选中
+
+        var circle = new fabric.Circle({
+            radius: 50, left: 275, top: 75, fill: '#aac', hasControls: false, hasBorders: false,
+        });
+
+        var triangle = new fabric.Triangle({
+            width: 100, height: 100, left: 50, top: 300, fill: '#cca', hasControls: false, hasBorders: false,
+        });
+        canvas.add(rect1, rect2);
+
+//        canvas.add(rect1, rect2, rect3, circle, triangle);
+        canvas.on({
+            'object:moving': onChange,
+            'object:scaling': onChange,
+            'object:rotating': onChange,
+        });
+        canvas.on({
+            'mouse:down': function (options) {
+                if(options.target)
+                options.target.mousedown = 1;
+            },
+            'mouse:up':function (options) {
+                if(options.target)
+                    options.target.mousedown = 0;
+            }
+        });
+
+        function onChange(options) {
+            options.target.setCoords();
+            canvas.forEachObject(function (obj) {
+                if (obj === options.target) return;
+                obj.set('opacity', options.target.intersectsWithObject(obj) ? 0.5 : 1);
+            });
+        }
+
+        setInterval(function () {
+            console.log("1");
+            var items = canvas.getObjects();
+            console.log(items);
+            for (var i = 0; i < items.length; i++) {
+                items[i].addGravity(500);
+
+            }
+            canvas.renderAll();
+        }, 50);
+
+
+    })();
+</script>
+</body>
+</html>
